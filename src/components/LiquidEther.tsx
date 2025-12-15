@@ -22,6 +22,7 @@ export interface LiquidEtherProps {
   takeoverDuration?: number;
   autoResumeDelay?: number;
   autoRampDuration?: number;
+  interactive?: boolean;
 }
 
 interface SimOptions {
@@ -44,7 +45,7 @@ interface LiquidEtherWebGL {
     speed: number;
     resumeDelay: number;
     rampDurationMs: number;
-    mouse?: { autoIntensity: number; takeoverDuration: number };
+    mouse?: any; // Changed to any to allow access to interactive
     forceStop: () => void;
   };
   resize: () => void;
@@ -74,7 +75,8 @@ export default function LiquidEther({
   autoIntensity = 2.2,
   takeoverDuration = 0.25,
   autoResumeDelay = 1000,
-  autoRampDuration = 0.6
+  autoRampDuration = 0.6,
+  interactive = true,
 }: LiquidEtherProps): React.ReactElement {
   const mountRef = useRef<HTMLDivElement | null>(null);
   const webglRef = useRef<LiquidEtherWebGL | null>(null);
@@ -188,6 +190,7 @@ export default function LiquidEther({
       private _onTouchMove = this.onDocumentTouchMove.bind(this);
       private _onTouchEnd = this.onTouchEnd.bind(this);
       private _onDocumentLeave = this.onDocumentLeave.bind(this);
+      interactive = true;
       init(container: HTMLElement) {
         this.container = container;
         this.docTarget = container.ownerDocument || null;
@@ -246,6 +249,7 @@ export default function LiquidEther({
         this.mouseMoved = true;
       }
       onDocumentMouseMove(event: MouseEvent) {
+        if (!this.interactive) return;
         if (!this.updateHoverState(event.clientX, event.clientY)) return;
         if (this.onInteract) this.onInteract();
         if (this.isAutoActive && !this.hasUserControl && !this.takeoverActive) {
@@ -265,6 +269,7 @@ export default function LiquidEther({
         this.hasUserControl = true;
       }
       onDocumentTouchStart(event: TouchEvent) {
+        if (!this.interactive) return;
         if (event.touches.length !== 1) return;
         const t = event.touches[0];
         if (!this.updateHoverState(t.clientX, t.clientY)) return;
@@ -273,6 +278,7 @@ export default function LiquidEther({
         this.hasUserControl = true;
       }
       onDocumentTouchMove(event: TouchEvent) {
+        if (!this.interactive) return;
         if (event.touches.length !== 1) return;
         const t = event.touches[0];
         if (!this.updateHoverState(t.clientX, t.clientY)) return;
@@ -280,9 +286,11 @@ export default function LiquidEther({
         this.setCoords(t.clientX, t.clientY);
       }
       onTouchEnd() {
+        if (!this.interactive) return;
         this.isHoverInside = false;
       }
       onDocumentLeave() {
+        if (!this.interactive) return;
         this.isHoverInside = false;
       }
       update() {
@@ -1217,6 +1225,7 @@ export default function LiquidEther({
       if (webgl.autoDriver.mouse) {
         webgl.autoDriver.mouse.autoIntensity = autoIntensity;
         webgl.autoDriver.mouse.takeoverDuration = takeoverDuration;
+        webgl.autoDriver.mouse.interactive = interactive;
       }
     }
     if (resolution !== prevRes) sim.resize();
@@ -1236,7 +1245,8 @@ export default function LiquidEther({
     autoIntensity,
     takeoverDuration,
     autoResumeDelay,
-    autoRampDuration
+    autoRampDuration,
+    interactive
   ]);
 
   return (

@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link"
-import { ThemeToggle } from "../ui/ThemeToggle"
+import ThemeToggle  from "../ui/ThemeToggle"
+import PerformanceToggle from "../ui/PerformanceToggle"
 import TextType from "../TextType"
 import { Download } from "lucide-react"
 import ElectricBorder from "../ElectricBorder"
@@ -47,6 +48,7 @@ import ElectricBorder from "../ElectricBorder"
                     </ElectricBorder>
                 </nav>
                 <ThemeToggle />
+                <PerformanceToggle />
         </div>
     )
 }
