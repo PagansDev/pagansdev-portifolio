@@ -1,4 +1,4 @@
-import HeaderText from "@/components/ui/HeaderText.component";
+import HeaderText from "@/components/ui/HeaderText";
 
 export default function Admin() {
   return (
