@@ -16,7 +16,7 @@ export default function PerformanceToggle() {
                 togglePerformanceMode()
             }}
             className="bg-zinc-200/20 rounded-md py-0 px-2 text-sm font-medium">
-                <span className="font-medium transform duration-200">{performanceMode === "quality" ? "Qualidade" : "Performance"}</span>
+                <span className="font-medium transform duration-200">{performanceMode === "quality" ? "Qualidade" : "Desempenho"}</span>
             </button>
             </div>
         </div>
