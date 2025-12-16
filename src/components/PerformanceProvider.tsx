@@ -49,11 +49,11 @@ export function PerformanceProvider({ children }: { children: React.ReactNode })
     if (performanceMode === "performance") {
       // --- PERFORMANCE MODE ---
       return {
-        cursorSize: 300,
+        cursorSize: 100,
         resolution: 0.1,
         isBounce: false,      
         BFECC: false,
-        mouseForce: 30, // Restored force for auto-demo
+        mouseForce: 15, 
         autoDemo: true,        
         autoSpeed: 0.3,        
         autoIntensity: 2.2,
@@ -64,7 +64,7 @@ export function PerformanceProvider({ children }: { children: React.ReactNode })
         takeoverDuration: 0.25,
         autoResumeDelay: 500,
         autoRampDuration: 0.6,
-        interactive: false // Disabled user interaction
+        interactive: false
       };
     } else {
       // --- QUALITY MODE ---
