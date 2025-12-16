@@ -53,10 +53,10 @@ export function PerformanceProvider({ children }: { children: React.ReactNode })
         resolution: 0.1,
         isBounce: false,      
         BFECC: false,
-        mouseForce: 15, 
+        mouseForce: 10, 
         autoDemo: true,        
-        autoSpeed: 0.3,        
-        autoIntensity: 2.2,
+        autoSpeed: 0.2,        
+        autoIntensity: 1.8,
         isViscous: false,
         viscous: 10,
         iterationsViscous: 8,
@@ -69,7 +69,7 @@ export function PerformanceProvider({ children }: { children: React.ReactNode })
     } else {
       // --- QUALITY MODE ---
       return {
-        cursorSize: 300,
+        cursorSize: 100,
         resolution: 0.4, 
         isBounce: false,      
         BFECC: true,
