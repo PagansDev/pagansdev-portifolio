@@ -9,7 +9,7 @@ import ElectricBorder from "../ElectricBorder"
     return (
         
         <div className="fixed w-full top-5 z-50 flex items-center justify-center gap-8">
-                <nav className="flex flex-row items-center justify-between px-6 py-2 backdrop-blur-md bg-zinc-50/10 border-[0.12rem] border-[--var(--border)]  rounded-[12rem] min-w-4xl z-50 ">
+                <nav className="flex flex-row items-center justify-between px-6 py-2 backdrop-blur-md bg-zinc-50/10 border-[0.12rem] border-[--var(--border)]  rounded-[12rem] min-w-6xl z-50 ">
                     <div className="min-w-[120px]">
                         <TextType
                             text={["PagansDev"]}
@@ -18,7 +18,7 @@ import ElectricBorder from "../ElectricBorder"
                             showCursor={true}
                             deletingSpeed = {10}
                             cursorCharacter="|"
-                            className="text-xl font-bold"
+                            className="text-xl font-bold font-mono"
                         />
                     </div>
                     <div className="flex items-center gap-4">

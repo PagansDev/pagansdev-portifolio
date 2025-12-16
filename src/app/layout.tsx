@@ -6,7 +6,7 @@ import GlassNavbar from "@/components/layout/GlassNavbar";
 import LiquidBackground from "@/components/LiquidBackground";
 import { PerformanceProvider } from "@/components/PerformanceProvider";
 import CustomCursor from "@/components/ui/CustomCursor";
-
+import AnimatedContent from "@/components/AnimatedContent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PagansDev - Portfolio"
+  title: "PagansDev - Portfolio",
 };
 
 export default function RootLayout({
@@ -34,21 +34,33 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-transparent!`}
       >
         <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <PerformanceProvider>
-              <div className="fixed inset-0 -z-20 bg-background pointer-events-none transition-colors duration-300" />
-              <CustomCursor />
-              <GlassNavbar />
-              <LiquidBackground />
-              <main className="relative min-h-screen max-w-[70%] mx-auto">
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <PerformanceProvider>
+            <div className="fixed inset-0 -z-20 bg-background pointer-events-none transition-colors duration-300" />
+            <CustomCursor />
+            <GlassNavbar />
+            <LiquidBackground />
+            <main className="relative min-h-screen max-w-[70%] mx-auto">
+              <AnimatedContent
+                distance={150}
+                direction="vertical"
+                reverse={false}
+                duration={1.2}
+                ease="power3.out"
+                initialOpacity={0.2}
+                animateOpacity
+                scale={1.1}
+                recalculateOnPathChange={true}
+              >
                 {children}
-              </main>
-            </PerformanceProvider>
-          </ThemeProvider>
+              </AnimatedContent>
+            </main>
+          </PerformanceProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
