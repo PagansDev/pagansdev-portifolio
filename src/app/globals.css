@@ -131,4 +131,12 @@
   * {
     cursor: none !important;
   }
+
+  input, textarea {
+    @apply bg-zinc-400/20 text-foreground rounded-md border border-zinc-200 p-3;
+  }
+
+  input:focus, textarea:focus {
+    @apply bg-zinc-400/20 text-foreground rounded-md p-3 ring-1 ring-zinc-200;
+  }
 }
