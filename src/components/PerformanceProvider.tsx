@@ -30,7 +30,7 @@ interface PerformanceContextType {
 const PerformanceContext = createContext<PerformanceContextType | undefined>(undefined);
 
 export function PerformanceProvider({ children }: { children: React.ReactNode }) {
-    const [performanceMode, setPerformanceMode] = useState("quality")
+    const [performanceMode, setPerformanceMode] = useState("performance")
 
     useEffect(() => {
         const storedMode = localStorage.getItem("perf-mode")

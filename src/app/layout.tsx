@@ -44,7 +44,7 @@ export default function RootLayout({
             <CustomCursor />
             <GlassNavbar />
             <LiquidBackground />
-            <main className="relative min-h-screen max-w-[73%] mx-auto">
+            <main className="relative min-h-screen sm:max-w-full md:max-w-[73%] mx-auto">
               <AnimatedContent
                 distance={150}
                 direction="vertical"

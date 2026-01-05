@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import HeaderText from "@/components/ui/HeaderText";
 import GlassCard from "@/components/ui/GlassCard";
@@ -13,7 +13,6 @@ import {
 import Link from "next/link";
 
 export default function Contact() {
-
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
 
@@ -32,8 +31,8 @@ export default function Contact() {
           />
         </div>
 
-        <div className="flex flex-row gap-4">
-          <div className="flex flex-col gap-4 w-75">
+        <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex flex-col gap-4 w-full md:w-80 shrink-0">
             <GlassCard className="p-4 flex flex-col items-center gap-4 hover:bg-zinc-50/20 transition-colors">
               <Mail className="w-12 h-12 text-[--var(--primary)]" />
               <h3 className="text-xl font-bold">Email</h3>
@@ -66,13 +65,13 @@ export default function Contact() {
                 github.com/PagansDev
               </Link>
             </GlassCard>
-            <GlassCard className="p-4 flex flex-row items-center gap-2 hover:bg-zinc-50/20 transition-colors">
+            <GlassCard className="p-4 flex flex-row items-center justify-center gap-2 hover:bg-zinc-50/20 transition-colors">
               <MapPin className="w-8 h-8 text-[--var(--primary)]" />
               <h3 className="text-sm font-bold">Localização: </h3>
               <p>Sorocaba-SP</p>
             </GlassCard>
           </div>
-          <div className="flex flex-1">
+          <div className="flex flex-1 w-full">
             <GlassCard className="p-8 flex flex-col w-full h-full gap-4 hover:bg-zinc-50/20 transition-colors">
               <div className="flex flex-row items-center gap-2">
                 <MessageCircleMore className="w-8 h-8 text-[--var(--primary)]" />
@@ -87,6 +86,7 @@ export default function Contact() {
                 type="text"
                 id="name"
                 placeholder="Nome"
+                className="p-3 rounded-lg bg-zinc-100/5 dark:bg-zinc-900/20 border border-zinc-200/20 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
                 onChange={(e) => setName(e.target.value)}
               />
               <label htmlFor="message" className="text-sm font-bold">
@@ -96,14 +96,16 @@ export default function Contact() {
                 name="message"
                 id="message"
                 placeholder="Mensagem"
+                className="p-3 rounded-lg bg-zinc-100/5 dark:bg-zinc-900/20 border border-zinc-200/20 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all resize-none"
                 onChange={(e) => setMessage(e.target.value)}
                 cols={30}
                 rows={10}
               ></textarea>
               <Link
-              href={handleSend()}
-              target="_blank"
-              className="bg-teal-500/50 py-2 px-4 rounded-md hover:bg-teal-600/50 transition-colors flex flex-row items-center gap-2 self-end mt-auto">
+                href={handleSend()}
+                target="_blank"
+                className="bg-teal-500/50 py-2 px-4 rounded-md hover:bg-teal-600/50 transition-colors flex flex-row items-center gap-2 self-end mt-auto"
+              >
                 <span className="text-xl font-bold">Enviar</span>
                 <SendHorizonal className="w-6 h-6" />
               </Link>

@@ -12,7 +12,7 @@ export default function GlassCard({
   return (
     <div
       className={cn(
-        "backdrop-blur-xl grayscale-25 drop-shadow-xl bg-zinc-50/10 border-[0.12rem] border-[--var(--border)] rounded-[1rem]",
+        "backdrop-blur-xl grayscale-25 drop-shadow-xl bg-zinc-900/5 dark:bg-zinc-50/10 border-[0.12rem] border-zinc-200 dark:border-white/10 rounded-[1rem]",
         className
       )}
       {...props}
