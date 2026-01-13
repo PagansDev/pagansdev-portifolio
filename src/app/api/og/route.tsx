@@ -29,8 +29,8 @@ export async function GET(req: Request) {
         {/* Glass Card - Simplified for Satori compatibility */}
         <div
           style={{
-            width: "900px",
-            padding: "60px",
+            width: "1200px",
+            padding: "40px",
             borderRadius: "24px",
             background: "rgba(255, 255, 255, 0.08)",
             border: "1px solid rgba(255, 255, 255, 0.15)",
