@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     siteName: "PagansDev",
     images: [
       {
-        url: "https://www.pagansdev.site/og-pic.png",
-        width: 1200,
-        height: 630,
+        url: "https://www.pagansdev.site/api/og",
+        width: 1366,
+        height: 768,
         alt: "PagansDev Portfolio",
       },
     ],
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "PagansDev - Portfolio",
     description: "Desenvolvimento, projetos e ideias. Conheça meu trabalho.",
-    images: ["https://www.pagansdev.site/og-pic.png"],
+    images: ["https://www.pagansdev.site/api/og"],
     site: "https://www.pagansdev.site",
   },
 };
