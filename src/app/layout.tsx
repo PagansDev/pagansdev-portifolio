@@ -20,6 +20,29 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "PagansDev - Portfolio",
+  description: "Desenvolvimento, projetos e ideias. Conheça meu trabalho.",
+  openGraph: {
+    title: "PagansDev - Portfolio",
+    description: "Desenvolvimento, projetos e ideias. Conheça meu trabalho.",
+    url: "https://www.pagansdev.site",
+    siteName: "PagansDev",
+    images: [
+      {
+        url: "https://www.pagansdev.site/og-pic.png",
+        width: 1200,
+        height: 630,
+        alt: "PagansDev Portfolio",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PagansDev - Portfolio",
+    description: "Desenvolvimento, projetos e ideias. Conheça meu trabalho.",
+    images: ["https://www.pagansdev.site/og-pic.png"],
+    site: "https://www.pagansdev.site",
+  },
 };
 
 export default function RootLayout({
