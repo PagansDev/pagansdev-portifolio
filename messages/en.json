@@ -71,6 +71,11 @@
         "subtitle": "@ Freelance - Real-time chat for customer support with specialized AI for N1 and N2 support.",
         "description": "TriggerDesk-AI is a complete backend, developed by me, in NodeJS and MongoDB for real-time chat via websocket, which can be integrated into any frontend. The system works with markdown documents for modular prompt addition and an AI system (via OpenRouter) that assists N1 support, in addition to automating ticket opening, moderating chats and sending notifications to support. Using Support Context, the frontend can send user information such as settings and history to assist support. Authentication is done using the backend Secret and validating the token sent by the Front-end in the websocket handshake. The system includes Internal Notes, Ticket Assignment, Internal Groups, and image attachment (via MongoDB) among others."
       },
+      "lexomni": {
+        "title": "Lexomni-MCP",
+        "subtitle": "@ Freelance - Local knowledge base for AI agents with Markdown and PDF indexing.",
+        "description": "Lexomni MCP turns the project's /_lexomni folder into a local knowledge base for AI agents, indexing Markdown and PDFs for search, chunked reading, and auditable incremental memory."
+      },
       "impact": {
         "title": "Impact System",
         "subtitle": "@ CBM informática - Complete system for medical clinic management.",

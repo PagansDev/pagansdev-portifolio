@@ -71,6 +71,11 @@
         "subtitle": "@ Autônomo - Chat em tempo real para atendimento ao cliente com IA especializada para suporte N1 e N2.",
         "description": "O TriggerDesk-AI é um backend completo, desenvolvido por mim, em NodeJS e MongoDB para chat em tempo real via websocket, podendo ser integrado em qualquer frontend. O sistema trabalha com documentos markdown para adição modular de prompts e um sistema de IA (via OpenRouter) que auxilia o suporte N1, além de automatizar abertura de chamados (Tickets), fazer moderação dos chats e enviar notificações para o suporte. Usando o Support Context, o frontend pode enviar informações do usuário como configurações e histórico para auxiliar o suporte. A autenticação é feita usando o Secret do backend e validando o token enviado pelo Front-end no handshake do websocket. O sistema conta com Notas Internas, Atribuição de chamados, Grupos Internos e anexo de imagem (via MongoDB), entre outros."
       },
+      "lexomni": {
+        "title": "Lexomni-MCP",
+        "subtitle": "@ Autônomo - Base de conhecimento local para agentes de IA com indexação de Markdown e PDF.",
+        "description": "O Lexomni MCP transforma a pasta /_lexomni do projeto em uma base de conhecimento local para agentes de IA, indexando Markdown e PDFs para busca, leitura em fragmentos e memória incremental auditável."
+      },
       "impact": {
         "title": "Sistema Impact",
         "subtitle": "@ CBM informática - Sistema completo para gerenciamento de clinica médica.",

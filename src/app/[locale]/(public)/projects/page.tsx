@@ -15,6 +15,24 @@ export default function ProjectsPage() {
 
   const projectsData = [
   {
+    images: ["/lexomni-1.jpg", "/lexomni-2.jpg"],
+    title: t("projects.items.lexomni.title"),
+    subtitle: t("projects.items.lexomni.subtitle"),
+    description: t("projects.items.lexomni.description"),
+    tags: [
+      "TypeScript",
+      "Node.js",
+      "MCP",
+      "SQLite FTS5",
+      "Markdown",
+      "PDF",
+    ],
+    repoUrl: "https://github.com/PagansDev/lexomni-mcp",
+    deployUrl: "https://www.npmjs.com/package/lexomni-mcp",
+    borderColor: "#0ea5e9",
+    gradient: "linear-gradient(135deg, #0ea5e9, #0369a1)",
+  },
+  {
     images: ["/private.png"],
     title: t("projects.items.privateProject.title"),
     subtitle: t("projects.items.privateProject.subtitle"),

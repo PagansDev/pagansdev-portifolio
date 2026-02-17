@@ -1,6 +1,6 @@
 "use client";
 import { Link, usePathname } from "@/i18n/navigation";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import ThemeToggle from "../ui/ThemeToggle";
 import PerformanceToggle from "../ui/PerformanceToggle";
 import LanguageSwitcher from "../ui/LanguageSwitcher";
@@ -13,6 +13,11 @@ export default function GlassNavbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslations();
+  const locale = useLocale();
+
+  const cvFile = locale === "en"
+    ? "/EN - CV Paulo Gabriel Neves Santos.pdf"
+    : "/PT - CV Paulo Gabriel Neves Santos.pdf";
 
   const navLinks = [
     { href: "/", label: t("nav.about") },
@@ -63,8 +68,8 @@ export default function GlassNavbar() {
                 style={{ borderRadius: 8 }}
               >
                 <a
-                  href="/CV Paulo Gabriel Neves Santos - 05-01-2026.pdf"
-                  download="CV_Paulo_Gabriel_Neves_Santos.pdf"
+                  href={cvFile}
+                  download
                   className="py-1.5 px-3 text-sm rounded-lg flex flex-row items-center gap-2 transition-colors hover:bg-zinc-200/20 cursor-pointer"
                 >
                   <Download size={16} />
@@ -104,8 +109,8 @@ export default function GlassNavbar() {
               style={{ borderRadius: 16 }}
             >
               <a
-                href="/CV Paulo Gabriel Neves Santos - 05-01-2026.pdf"
-                download="CV_Paulo_Gabriel_Neves_Santos.pdf"
+                href={cvFile}
+                download
                 className="py-2 px-4 rounded-xl flex flex-row items-center gap-2 transition-colors hover:bg-zinc-200/20 cursor-pointer"
               >
                 <Download />
