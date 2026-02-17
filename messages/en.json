@@ -16,6 +16,7 @@
   "nav": {
     "about": "About",
     "projects": "Projects",
+    "lexomni": "Lexomni MCP",
     "contact": "Contact",
     "toggleTheme": "Toggle theme"
   },
@@ -60,6 +61,7 @@
     "repository": "Repository",
     "private": "Private",
     "project": "Project",
+    "installInCursor": "Install in Cursor",
     "items": {
       "privateProject": {
         "title": "Private Project",
@@ -111,5 +113,47 @@
   "admin": {
     "title": "Administrative",
     "subtitle": "Administrator screen"
+  },
+  "lexomni": {
+    "title": "Lexomni MCP",
+    "subtitle": "Persistent memory & semantic search for AI agents using Markdown and PDFs",
+    "description": "Lexomni MCP transforms your project's /_lexomni folder into a local knowledge base for AI agents. It indexes Markdown and PDF files using SQLite FTS5 for fast search, chunked reading, and auditable incremental memory.",
+    "tagline": "Stop losing context between prompts. Give your agents long-term memory.",
+    "installButton": "One-Click Cursor Install",
+    "copyConfig": "Copy Configuration",
+    "copySuccess": "Configuration copied!",
+    "cursorRequired": "Cursor required",
+    "compatibility": {
+      "cursor": "Works with Cursor",
+      "local": "Runs locally",
+      "noCloud": "No cloud required"
+    },
+    "viewRepo": "Star & Contribute",
+    "viewNpm": "Install & Use",
+    "whyTitle": "WHY LEXOMNI EXISTS",
+    "whyContent": "Software projects accumulate critical knowledge:\n\narchitecture decisions, guidelines, ADRs, internal patterns, and technical references that shape how a system evolves.\n\nThis knowledge is often scattered across PDFs, Markdown files, wikis, and personal notes — hard to consult, easy to ignore, and rarely integrated into the real development workflow.\n\nLexomni exists to turn knowledge into direction.\n\nIt transforms the _lexomni folder into a local, searchable knowledge base that defines the project's technical context — for both humans and AI agents.\n\nWith Lexomni, you can:\n\n• make guidelines and ADRs an active part of development\n• preserve architectural decisions over time\n• document business rules and internal standards\n• quickly consult technical reference materials and books\n• guide AI agents using sources you deliberately selected\n\nThis includes everything from project documentation to iconic software engineering literature.\n\nYou decide which ideas shape your system.\nYou define the technical standard your AI should follow.\nYou keep knowledge alive and versioned alongside the codebase.\n\nBecause code changes.\nArchitecture evolves.\nKnowledge must evolve with it.\n\nLexomni doesn't just store information.\nIt establishes technical direction.",
+    "toolsIntro": "Available tools",
+    "flowchart": {
+      "agentReads": "Agent reads docs",
+      "indexBuilds": "Index builds",
+      "searchRetrieval": "Search retrieval",
+      "memoryPersists": "Memory persists"
+    },
+    "tools": {
+      "listSources": "Lists documents (MD and PDF) in the workspace",
+      "buildIndex": "Indexes documents in SQLite FTS5 for fast search",
+      "searchDocs": "Keyword search in indexed documents",
+      "readDoc": "Reads a specific chunk of a document",
+      "writeNote": "Creates or updates markdown notes in _lexomni/agent"
+    },
+    "features": {
+      "title": "Features",
+      "workspace": "Structure /_lexomni: user/, agent/, books/, index/",
+      "search": "Fast and accurate FTS5 search",
+      "security": "Security: path traversal blocking, restricted access",
+      "multilingual": "Multilingual strategy with living glossary"
+    },
+    "metaDescription": "Lexomni MCP: AI agent memory and semantic search MCP server. Give your AI agents persistent local knowledge base using Markdown and PDFs. Boost developer productivity with structured, searchable context that never forgets.",
+    "metaOgDescription": "AI agent memory MCP server with semantic search for local knowledge base management. Developer productivity tool for persistent AI context."
   }
 }

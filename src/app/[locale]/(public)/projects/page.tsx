@@ -2,12 +2,13 @@
 
 import React, { useState } from "react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import GlassCard from "@/components/ui/GlassCard";
 import HeaderText from "@/components/ui/HeaderText";
 import Badge from "@/components/ui/Badge";
 import Carousel from "@/components/Carousel";
 import ImageViewer from "@/components/ui/ImageViewer";
-import { ExternalLink, Github, Lock } from "lucide-react";
+import { ExternalLink, Github, Lock, Workflow } from "lucide-react";
 
 export default function ProjectsPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -237,6 +238,16 @@ export default function ProjectsPage() {
                     >
                       <ExternalLink size={16} /> {t("projects.project")}
                     </button>
+                  )}
+
+                  {/* Install in Cursor Button - Only for Lexomni */}
+                  {index === 0 && (
+                    <Link
+                      href="/lexomni"
+                      className="flex-1 py-2.5 bg-cyan-500/10 dark:bg-cyan-500/20 hover:bg-cyan-500/20 dark:hover:bg-cyan-500/30 border border-cyan-500/20 dark:border-cyan-500/30 rounded-lg flex items-center justify-center gap-2 text-sm font-medium text-cyan-600 dark:text-cyan-400 transition-all"
+                    >
+                      <Workflow size={16} /> {t("projects.installInCursor")}
+                    </Link>
                   )}
                 </div>
               </div>

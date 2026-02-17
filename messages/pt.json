@@ -16,6 +16,7 @@
   "nav": {
     "about": "Sobre",
     "projects": "Projetos",
+    "lexomni": "Lexomni MCP",
     "contact": "Contato",
     "toggleTheme": "Alternar tema"
   },
@@ -60,6 +61,7 @@
     "repository": "Repositório",
     "private": "Privado",
     "project": "Projeto",
+    "installInCursor": "Instalar no Cursor",
     "items": {
       "privateProject": {
         "title": "Projeto Privado",
@@ -111,5 +113,47 @@
   "admin": {
     "title": "Administrativo",
     "subtitle": "Tela de administrador"
+  },
+  "lexomni": {
+    "title": "Lexomni MCP",
+    "subtitle": "Memória persistente e busca semântica para agentes de IA usando Markdown e PDFs",
+    "description": "O Lexomni MCP transforma a pasta /_lexomni do seu projeto em uma base de conhecimento local para agentes de IA. Indexa arquivos Markdown e PDFs usando SQLite FTS5 para busca rápida, leitura em fragmentos e memória incremental auditável.",
+    "tagline": "Pare de perder contexto entre prompts. Dê memória de longo prazo aos seus agentes.",
+    "installButton": "One-Click Cursor Install",
+    "copyConfig": "Copiar Configuração",
+    "copySuccess": "Configuração copiada!",
+    "cursorRequired": "Requer Cursor instalado",
+    "compatibility": {
+      "cursor": "Funciona com Cursor",
+      "local": "Roda localmente",
+      "noCloud": "Sem necessidade de nuvem"
+    },
+    "viewRepo": "Dar estrela e contribuir",
+    "viewNpm": "Instalar e usar",
+    "whyTitle": "POR QUE O LEXOMNI EXISTE",
+    "whyContent": "Projetos de software acumulam conhecimento crítico:\n\ndecisões arquiteturais, guidelines, ADRs, padrões internos, e referências técnicas que moldam como o sistema deve evoluir.\n\nEsse conhecimento normalmente fica espalhado entre PDFs, Markdown, wikis e anotações pessoais — difícil de consultar, fácil de ignorar e quase impossível de incorporar no fluxo real de desenvolvimento.\n\nLexomni existe para transformar conhecimento em direção.\n\nEle converte a pasta _lexomni em uma base de conhecimento local e pesquisável que define o contexto técnico do projeto — para humanos e agentes de IA.\n\nCom ele, você pode:\n\n• tornar guidelines e ADRs parte ativa do desenvolvimento\n• preservar decisões arquiteturais ao longo do tempo\n• documentar regras de negócio e padrões internos\n• consultar rapidamente livros e materiais técnicos de referência\n• orientar agentes de IA com base nas fontes que você escolheu\n\nIsso inclui desde documentação do próprio projeto até obras clássicas da engenharia de software.\n\nVocê decide quais ideias moldam o sistema.\nVocê define o padrão técnico que a IA deve seguir.\nVocê mantém o conhecimento vivo e versionado junto ao código.\n\nPorque código muda.\nArquitetura evolui.\nConhecimento precisa acompanhar.\n\nLexomni não apenas armazena informação.\nEle estabelece direção técnica.",
+    "toolsIntro": "Ferramentas disponíveis",
+    "flowchart": {
+      "agentReads": "Agente lê docs",
+      "indexBuilds": "Índice é construído",
+      "searchRetrieval": "Busca e recuperação",
+      "memoryPersists": "Memória persiste"
+    },
+    "tools": {
+      "listSources": "Lista documentos (MD e PDF) no workspace",
+      "buildIndex": "Indexa documentos no SQLite FTS5 para busca rápida",
+      "searchDocs": "Busca por palavras-chave nos documentos indexados",
+      "readDoc": "Lê um fragmento específico de um documento",
+      "writeNote": "Cria ou atualiza notas markdown em _lexomni/agent"
+    },
+    "features": {
+      "title": "Recursos",
+      "workspace": "Estrutura /_lexomni: user/, agent/, books/, index/",
+      "search": "Busca FTS5 rápida e precisa",
+      "security": "Segurança: bloqueio de path traversal, acesso restrito",
+      "multilingual": "Estratégia multilíngue com glossário vivo"
+    },
+    "metaDescription": "Lexomni MCP: memória para agentes de IA e servidor MCP de busca semântica. Base de conhecimento local persistente com Markdown e PDFs. Produtividade do desenvolvedor com contexto estruturado e pesquisável.",
+    "metaOgDescription": "Servidor MCP de memória para agentes de IA e busca semântica. Ferramenta de produtividade para contexto persistente em base de conhecimento local."
   }
 }

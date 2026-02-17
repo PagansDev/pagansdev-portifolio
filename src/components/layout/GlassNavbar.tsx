@@ -22,6 +22,7 @@ export default function GlassNavbar() {
   const navLinks = [
     { href: "/", label: t("nav.about") },
     { href: "/projects", label: t("nav.projects") },
+    { href: "/lexomni", label: t("nav.lexomni") },
     { href: "/contact", label: t("nav.contact") },
   ];
 
