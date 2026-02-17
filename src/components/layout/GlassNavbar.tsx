@@ -1,21 +1,23 @@
 "use client";
-import Link from "next/link";
+import { Link, usePathname } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import ThemeToggle from "../ui/ThemeToggle";
 import PerformanceToggle from "../ui/PerformanceToggle";
+import LanguageSwitcher from "../ui/LanguageSwitcher";
 import TextType from "../TextType";
 import { Download, Menu, X } from "lucide-react";
 import ElectricBorder from "../ElectricBorder";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export default function GlassNavbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const t = useTranslations();
 
   const navLinks = [
-    { href: "/", label: "Sobre" },
-    { href: "/projects", label: "Projetos" },
-    { href: "/contact", label: "Contato" },
+    { href: "/", label: t("nav.about") },
+    { href: "/projects", label: t("nav.projects") },
+    { href: "/contact", label: t("nav.contact") },
   ];
 
   return (
@@ -67,7 +69,7 @@ export default function GlassNavbar() {
                 >
                   <Download size={16} />
                   <span className="font-semibold text-xs whitespace-nowrap">
-                    DOWNLOAD CV
+                    {t("common.downloadCv").toUpperCase()}
                   </span>
                 </a>
               </ElectricBorder>
@@ -107,7 +109,7 @@ export default function GlassNavbar() {
                 className="py-2 px-4 rounded-xl flex flex-row items-center gap-2 transition-colors hover:bg-zinc-200/20 cursor-pointer"
               >
                 <Download />
-                <span>Download CV</span>
+                <span>{t("common.downloadCv")}</span>
               </a>
             </ElectricBorder>
           </div>
@@ -141,6 +143,7 @@ export default function GlassNavbar() {
 
       {!isMenuOpen && (
         <div className="fixed bottom-6 right-6 z-50 flex items-center gap-4">
+          <LanguageSwitcher />
           <ThemeToggle />
           <PerformanceToggle />
         </div>

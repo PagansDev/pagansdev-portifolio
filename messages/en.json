@@ -1,0 +1,110 @@
+{
+  "metadata": {
+    "title": "PagansDev - Portfolio",
+    "description": "Development, projects and ideas. Explore my work.",
+    "ogTitle": "PagansDev - Portfolio",
+    "ogDescription": "Development, projects and ideas. Explore my work.",
+    "twitterTitle": "PagansDev - Portfolio",
+    "twitterDescription": "Development, projects and ideas. Explore my work."
+  },
+  "common": {
+    "downloadCv": "Download CV",
+    "available": "Available",
+    "seeProjects": "View Projects",
+    "contact": "Contact"
+  },
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "toggleTheme": "Toggle theme"
+  },
+  "performance": {
+    "mode": "Mode",
+    "quality": "Quality",
+    "performance": "Performance"
+  },
+  "home": {
+    "fullstackDeveloper": "Fullstack Developer",
+    "aboutMeTitle": "About me",
+    "aboutMeParagraph1": "I am a Fullstack developer with strong experience in Front-end, Back-end and application architecture. I develop APIs, complete systems and complex integrations using NodeJS / NestJS, C# / .NET, React / NextJS, Vue3 / Nuxt, always focusing on scalability, security and code clarity.",
+    "aboutMeParagraph2": "I have experience with relational databases, MongoDB, authentication, Docker containers. I like to participate from solution conception to final delivery, proposing technical and process improvements.",
+    "skillsTitle": "Technical Skills",
+    "myJourney": "My Journey",
+    "seeMore": "See more",
+    "seeLess": "See less",
+    "skills": {
+      "frontend": "Front-end",
+      "backend": "Back-end",
+      "tools": "Tools",
+      "advanced": "Advanced",
+      "intermediate": "Intermediate",
+      "basic": "Basic"
+    },
+    "timeline": {
+      "freelancer": {
+        "title": "Fullstack Developer - Freelancer @ Private",
+        "period": "jun/2025 - Present",
+        "description": "Development and maintenance of multi financial automation systems.\nWorking on system refactoring, service separation and resource optimization.\n● Bot for financial operations automation\n● Refactoring to more modern and maintainable standard\n● Complete backend using NodeJS + Sequelize, websocket and HTTP\n● Notification service for telegram with Typescript and GrammY\n● Modern Frontend implementation with React + Tailwindcss\n● Complex integration with external broker APIs, load balancer, multiple proxies, servers and scaling for +1000 active users, Hostinger VPS management\n● Resource optimization with Redis, BullMQ and multithread with JS/TS\n● Development of helper (Real-time chat) and ticket/support system with AI integration"
+      },
+      "cbm": {
+        "title": "Fullstack Developer - Intern @ CBM informática",
+        "period": "apr/2025 - nov/2025",
+        "description": "● Maintenance and support for legacy ERP systems in Delphi\n● MySQL database, SGBDs, queries and data scripts, PL/SQL\n● Front-end development with VueJS\n● Back-end development with C#, .NET and also PHP/Laravel\n● Containerization with Docker and Portainer\n● Azure solutions like SQL and Blob Storage\n● AnyDesk support, ticketing system, N1, 2 and 3 support.\n● Lead developer on customized fullstack system for multidisciplinary medical clinic"
+      }
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Explore some of my work.",
+    "repository": "Repository",
+    "private": "Private",
+    "project": "Project",
+    "items": {
+      "privateProject": {
+        "title": "Private Project",
+        "subtitle": "@ Private - Complete SaaS financial automation system",
+        "description": "The project is an automation tool for performing operations in the financial market. Integrated with external broker/platform APIs. I worked as a fullstack freelance developer doing maintenance and development of new features, in addition to architecture optimization and complex API integrations. I also worked on scaling the service to support +1000 active users and service separation for better performance. The client does not allow explicit disclosure."
+      },
+      "livechat": {
+        "title": "TriggerDesk-AI",
+        "subtitle": "@ Freelance - Real-time chat for customer support with specialized AI for N1 and N2 support.",
+        "description": "TriggerDesk-AI is a complete backend, developed by me, in NodeJS and MongoDB for real-time chat via websocket, which can be integrated into any frontend. The system works with markdown documents for modular prompt addition and an AI system (via OpenRouter) that assists N1 support, in addition to automating ticket opening, moderating chats and sending notifications to support. Using Support Context, the frontend can send user information such as settings and history to assist support. Authentication is done using the backend Secret and validating the token sent by the Front-end in the websocket handshake. The system includes Internal Notes, Ticket Assignment, Internal Groups, and image attachment (via MongoDB) among others."
+      },
+      "impact": {
+        "title": "Impact System",
+        "subtitle": "@ CBM informática - Complete system for medical clinic management.",
+        "description": "During my internship I was the lead developer of the system for the Impact - Transformation center client. The project consists of: An authentication API, a main API, an administrative Front-end and a Front-end with PWA for clinic clients. I developed the implementation of various requirements and integrations between services, such as: Scheduling and calendar of appointments and training; Management and synchronization of meal plans and training plans between clinic and client; Patient history recording, including anamnesis, images, prescriptions, financial and doctor management of patient documents; Dynamic schedule for reception and control of doctors' schedules and agendas; Registration of schedule blocks and fittings, among other requirements."
+      },
+      "rsvp": {
+        "title": "Wedding invitation",
+        "subtitle": "@ Freelance - Digital invitation for my wedding.",
+        "description": "Web application for digital wedding invitation with RSVP system, guest list, gift list, contribution page and administrative panel with Google login + allowed email list. The system provides ceremony and celebration location via Google Maps and payment links via mercado pago."
+      },
+      "tabela": {
+        "title": "Tax Table",
+        "subtitle": "@ Freelance - Web application for consulting tax tables such as NCM and CFOP.",
+        "description": "Web application for consulting tax tables such as NCM and CFOP. The project proposal was born from a need to frequently consult NCM codes for support during my internship. The system has a cache system with IndexedDB to avoid unnecessary requests and storage of NCM code chapters. It also has a search system to find NCM codes in a normalized way."
+      }
+    }
+  },
+  "contact": {
+    "title": "Want to get in touch with me?",
+    "subtitle": "I'm available for hire, freelance, projects or even a simple \"Hello!\"",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "location": "Location",
+    "locationCity": "Sorocaba-SP, Brazil",
+    "whatsappTitle": "Send a message via WhatsApp!",
+    "name": "Name",
+    "namePlaceholder": "Name",
+    "message": "Message",
+    "messagePlaceholder": "Message",
+    "send": "Send"
+  },
+  "admin": {
+    "title": "Administrative",
+    "subtitle": "Administrator screen"
+  }
+}

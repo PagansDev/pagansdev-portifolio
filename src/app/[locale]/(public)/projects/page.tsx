@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useTranslations } from "next-intl";
 import GlassCard from "@/components/ui/GlassCard";
 import HeaderText from "@/components/ui/HeaderText";
 import Badge from "@/components/ui/Badge";
@@ -8,13 +9,16 @@ import Carousel from "@/components/Carousel";
 import ImageViewer from "@/components/ui/ImageViewer";
 import { ExternalLink, Github, Lock } from "lucide-react";
 
-const projectsData = [
+export default function ProjectsPage() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const t = useTranslations();
+
+  const projectsData = [
   {
     images: ["/private.png"],
-    title: "Projeto Privado",
-    subtitle: "@ Privado - Sistema SaaS completo de automação financeira",
-    description:
-      "O projeto é uma ferramenta de automação para realização de operações no mercado financeiro. Integrado com APIs externas de corretoras/plataformas. Trabalhei como desenvolvedor fullstack freelance fazendo manutenção e desenvolvimento de novas features, além de otimização de arquitetura e integrações complexas de APIs. Também atuei na escala do serviço para comportar +1000 usuários ativos e separação de serviços para melhor performance. O cliente não permite divulgação explicita.",
+    title: t("projects.items.privateProject.title"),
+    subtitle: t("projects.items.privateProject.subtitle"),
+    description: t("projects.items.privateProject.description"),
     tags: [
       "React",
       "JavaScript / TypeScript",
@@ -30,11 +34,9 @@ const projectsData = [
   },
   {
     images: ["/livechat-3.jpg"],
-    title: "Livechat",
-    subtitle:
-      "@ Autônomo - Chat em tempo real para atendimento ao cliente com IA para suporte N1.",
-    description:
-      "O PagansDev - Livechat é um backend completo, desenvolvido por mim, em NodeJS e MongoDB para chat em tempo real via websocket, pondendo ser integrado em qualquer frontend. O sistema trabalha com documentos markdown para adição modular de prompts e um sistema de IA (via OpenRouter) que auxilia o suporte N1, além de automatizar abertura de chamados(Tickets), fazer moderação dos chats e enviar notificações para o suporte. Além disso, usando o Support Context o frontend pode enviar informações do usuário como configurações e histórico para auxiliar o suporte. A autenticação é feita usando o Secret do backend e validando o token enviado pelo Front-end no handshake do websocket. O sistema conta com Notas Internas, Atribuição de chamados, Grupos Internos, e anexo de imagem (via MongoDB) entre outros.",
+    title: t("projects.items.livechat.title"),
+    subtitle: t("projects.items.livechat.subtitle"),
+    description: t("projects.items.livechat.description"),
     tags: [
       "Node.js",
       "TypeScript",
@@ -43,18 +45,16 @@ const projectsData = [
       "OpenRouter",
       "Socket.io",
     ],
-    repoUrl: "https://github.com/PagansDev/PagansDev-Livechat",
+    repoUrl: "https://github.com/PagansDev/TriggerDesk-AI",
     deployUrl: "",
     borderColor: "#10b981",
     gradient: "linear-gradient(135deg, #10b981, #064e3b)",
   },
   {
     images: ["/impact-1.png", "/impact-2.png"],
-    title: "Sistema Impact",
-    subtitle:
-      "@ CBM informática - Sistema completo para gerenciamento de clinica médica.",
-    description:
-      "Durante meu estágio fui o desenvolvedor encarregado do sistema para o cliente Impact - Transformation center. O projeto é composto por: Uma API de autenticação, uma API principal, um Front-end administrativo e um Front-end com PWA para os clientes da clinica. Desenvolvi a implementação de diversos requisitos e integrações entre os serviços, como: Agendamento e calendário de consultas e treinos; Gerenciamento e sincronização de planos alimentares e planos de treino entre clinica e cliente; Registro de histórico de paciente, incluindo anamneses, imagens, preescrições, financeiro e gerenciamento dos medicos sobre os documentos dos pacientes; Agenda dinâmica para recepção e controle de horários e agendas dos médicos; Registro de bloqueios e encaixes de horários, entre outros requisitos.",
+    title: t("projects.items.impact.title"),
+    subtitle: t("projects.items.impact.subtitle"),
+    description: t("projects.items.impact.description"),
     tags: [
       "Vue3",
       "TypeScript",
@@ -83,10 +83,9 @@ const projectsData = [
       "/rsvp-8.png",
       "/rsvp-9.png",
     ],
-    title: "Convite de casamento",
-    subtitle: "@ Autônomo - Convite digital para meu casamento.",
-    description:
-      "Aplicação web para convite digital de casamento com sistema de confirmação de presença, lista de convidados, lista de presentes, pagina de contribuição e painel administrativo com login Google + lista de emails permitidos.O sistena disponibiliza localização da cerimônia e da celebração por meio do Google Maps e links de pagamento por meio do mercado pago. ",
+    title: t("projects.items.rsvp.title"),
+    subtitle: t("projects.items.rsvp.subtitle"),
+    description: t("projects.items.rsvp.description"),
     tags: [
       "Nuxt3",
       "TypeScript",
@@ -106,11 +105,9 @@ const projectsData = [
       "/tabela-3.png",
       "/tabela-4.png",
     ],
-    title: "Tabela Fiscal",
-    subtitle:
-      "@ Autônomo - Aplicação web para consulta de tabelas fiscais como NCM e CFOP.",
-    description:
-      "Aplicação web para consulta de tabelas fiscais como NCM e CFOP. A proposta do projeto nasceu de uma necessidade de consultar recorrentemente códigos de NCM para suporte no meu estágio. O sistema conta com um sistema de cache com IndexedDB para evitar requisições desnecessárias armazenamento dos capitulos dos códigos NCM. Também possui um sistema de busca para encontrar códigos de NCM de forma normalizada.",
+    title: t("projects.items.tabela.title"),
+    subtitle: t("projects.items.tabela.subtitle"),
+    description: t("projects.items.tabela.description"),
     tags: ["Nuxt3", "Nuxt/UI", "TypeScript", "IndexedDB", "Supabase"],
     repoUrl: "https://github.com/PagansDev/ncm",
     deployUrl: "https://tabelafiscal.site",
@@ -118,9 +115,6 @@ const projectsData = [
     gradient: "linear-gradient(135deg, #ec4899, #831843)",
   },
 ];
-
-export default function ProjectsPage() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const handleCardClick = (url?: string) => {
     if (url) window.open(url, "_blank", "noopener,noreferrer");
@@ -131,8 +125,8 @@ export default function ProjectsPage() {
       {/* Intro Section */}
       <section className="text-center md:text-left mt-12 mb-20">
         <HeaderText
-          title="Meus Projetos"
-          subtitle="Acompanhe um pouco do meu trabalho."
+          title={t("projects.title")}
+          subtitle={t("projects.subtitle")}
         />
       </section>
 
@@ -206,11 +200,11 @@ export default function ProjectsPage() {
                       }}
                       className="flex-1 py-2.5 bg-zinc-100 dark:bg-white/5 hover:bg-zinc-200 dark:hover:bg-white/10 border border-zinc-200 dark:border-white/5 hover:border-zinc-300 dark:hover:border-white/10 rounded-lg flex items-center justify-center gap-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 transition-all"
                     >
-                      <Github size={16} /> Repositório
+                      <Github size={16} /> {t("projects.repository")}
                     </button>
                   ) : (
                     <div className="flex-1 py-2.5 bg-zinc-50 dark:bg-black/20 rounded-lg flex items-center justify-center gap-2 text-sm font-medium text-zinc-400 dark:text-zinc-500 cursor-not-allowed border border-zinc-100 dark:border-white/5">
-                      <Lock size={16} /> Privado
+                      <Lock size={16} /> {t("projects.private")}
                     </div>
                   )}
 
@@ -223,7 +217,7 @@ export default function ProjectsPage() {
                       }}
                       className="flex-1 py-2.5 bg-primary/10 dark:bg-primary/20 hover:bg-primary/20 dark:hover:bg-primary/30 border border-primary/20 dark:border-primary/30 rounded-lg flex items-center justify-center gap-2 text-sm font-medium text-primary dark:text-white transition-all shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
                     >
-                      <ExternalLink size={16} /> Projeto
+                      <ExternalLink size={16} /> {t("projects.project")}
                     </button>
                   )}
                 </div>

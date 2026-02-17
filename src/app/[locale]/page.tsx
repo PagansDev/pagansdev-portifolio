@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import GlassCard from "@/components/ui/GlassCard";
 import {
   Mail,
@@ -19,6 +20,7 @@ import {
 import ScrollStack, { ScrollStackItem } from "@/components/ScrollStack";
 
 export default function Home() {
+  const t = useTranslations();
   return (
     <div className="min-h-screen py-24 px-4 sm:px-4 md:px-16 container mx-auto space-y-24">
       <section>
@@ -45,11 +47,11 @@ export default function Home() {
                   Paulo Gabriel Neves Santos
                 </h3>
                 <p className="text-lg font-medium text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-purple-600">
-                  Fullstack Developer
+                  {t("home.fullstackDeveloper")}
                 </p>
                 <p className="text-xs font-medium text-green-800 dark:text-green-300 animate-pulse bg-lime-400/20 border border-green-800 dark:border-green-300 rounded-3xl w-24 mx-auto">
                   <span className="bg-green-800 dark:bg-green-300 h-2 w-2 rounded-full inline-block mr-2"></span>
-                  Disponível
+                  {t("common.available")}
                 </p>
               </div>
             </div>
@@ -59,21 +61,14 @@ export default function Home() {
             <div className="text-center md:text-left space-y-4 min-w-[30%] ml-auto">
               <div>
                 <h1 className="text-3xl font-bold tracking-[0.2em] uppercase mb-2">
-                  Sobre mim
+                  {t("home.aboutMeTitle")}
                 </h1>
               </div>
               <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed">
-                Sou desenvolvedor Fullstack com forte atuação em Front-end,
-                Back-end e arquitetura de aplicações. Desenvolvo APIs, sistemas
-                completos e integrações complexas usando NodeJS / NestJS, C# /
-                .NET, React / NextJS, Vue3 / Nuxt e sempre com foco em
-                escalabilidade, segurança e clareza de código.
+                {t("home.aboutMeParagraph1")}
               </p>
               <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed">
-                Tenho experiência com bancos de dados relacionais, MongoDB,
-                autenticação, containers Docker. Gosto de participar desde a
-                concepção da solução até a entrega final, propondo melhorias
-                técnicas e de processo.
+                {t("home.aboutMeParagraph2")}
               </p>
 
               <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
@@ -81,13 +76,13 @@ export default function Home() {
                   href="/projects"
                   className="px-6 py-2.5 bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-900 rounded-full font-medium hover:scale-105 transition-transform flex items-center gap-2"
                 >
-                  <FolderCodeIcon className="w-4 h-4" /> Ver Projetos
+                  <FolderCodeIcon className="w-4 h-4" /> {t("common.seeProjects")}
                 </a>
                 <a
                   href="/contact"
                   className="px-6 py-2.5 bg-zinc-100/50 dark:bg-zinc-800/50 border border-zinc-200 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 rounded-full font-medium hover:bg-zinc-200/50 dark:hover:bg-zinc-700/50 transition-colors flex items-center gap-2"
                 >
-                  <Mail className="w-4 h-4" /> Contato
+                  <Mail className="w-4 h-4" /> {t("common.contact")}
                 </a>
               </div>
             </div>
@@ -98,7 +93,7 @@ export default function Home() {
       <section className="space-y-12 w-full h-[800px] relative">
         <div className="flex items-center gap-4 border-b border-zinc-800 pb-4 justify-between">
           <h2 className="text-2xl font-bold tracking-wider text-zinc-900 dark:text-zinc-100">
-            HABILIDADES TÉCNICAS
+            {t("home.skillsTitle").toUpperCase()}
           </h2>
           <ChevronsDownIcon className="w-6 h-6 animate-bounce" />
         </div>
@@ -112,17 +107,17 @@ export default function Home() {
             <div className="space-y-8">
               <div className="flex items-center gap-3 text-blue-500 font-medium">
                 <Code className="w-8 h-8" />
-                <h3 className="text-2xl">Front-end</h3>
+                <h3 className="text-2xl">{t("home.skills.frontend")}</h3>
               </div>
 
               <div className="space-y-4">
                 {[
-                  { name: "React / Next", level: "Avançado" },
-                  { name: "Vue3 / Nuxt", level: "Avançado" },
-                  { name: "JavaScript / TypeScript", level: "Avançado" },
-                  { name: "Tailwind CSS", level: "Avançado" },
-                  { name: "Styled Components", level: "Avançado" },
-                  { name: "SSR / SEO", level: "Intermediário" },
+                  { name: "React / Next", level: t("home.skills.advanced") },
+                  { name: "Vue3 / Nuxt", level: t("home.skills.advanced") },
+                  { name: "JavaScript / TypeScript", level: t("home.skills.advanced") },
+                  { name: "Tailwind CSS", level: t("home.skills.advanced") },
+                  { name: "Styled Components", level: t("home.skills.advanced") },
+                  { name: "SSR / SEO", level: t("home.skills.intermediate") },
                 ].map((skill) => (
                   <div
                     key={skill.name}
@@ -144,21 +139,21 @@ export default function Home() {
             <div className="space-y-8">
               <div className="flex items-center gap-3 text-emerald-500 font-medium">
                 <Database className="w-8 h-8" />
-                <h3 className="text-2xl">Back-end</h3>
+                <h3 className="text-2xl">{t("home.skills.backend")}</h3>
               </div>
 
               <div className="space-y-4">
                 {[
-                  { name: "Node.js / Express.js", level: "Avançado" },
-                  { name: "NestJS", level: "Avançado" },
+                  { name: "Node.js / Express.js", level: t("home.skills.advanced") },
+                  { name: "NestJS", level: t("home.skills.advanced") },
                   {
                     name: "MySQL, PostgreSQL, SQL Server, MongoDB",
-                    level: "Avançado",
+                    level: t("home.skills.advanced"),
                   },
-                  { name: "Rest API", level: "Avançado" },
-                  { name: "Websocket / Socket.io", level: "Avançado" },
-                  { name: "C#/ .Net", level: "Intermédiário" },
-                  { name: "Delphi", level: "Intermédiário" },
+                  { name: "Rest API", level: t("home.skills.advanced") },
+                  { name: "Websocket / Socket.io", level: t("home.skills.advanced") },
+                  { name: "C#/ .Net", level: t("home.skills.intermediate") },
+                  { name: "Delphi", level: t("home.skills.intermediate") },
                 ].map((skill) => (
                   <div
                     key={skill.name}
@@ -180,18 +175,18 @@ export default function Home() {
             <div className="space-y-8">
               <div className="flex items-center gap-3 text-purple-500 font-medium">
                 <Terminal className="w-8 h-8" />
-                <h3 className="text-2xl">Tools</h3>
+                <h3 className="text-2xl">{t("home.skills.tools")}</h3>
               </div>
 
               <div className="space-y-4">
                 {[
-                  { name: "Git / Github", level: "Avançado" },
-                  { name: "Docker", level: "Intermédiário" },
-                  { name: "Azure / AWS", level: "Básico" },
-                  { name: "Redis", level: "Intermédiário" },
-                  { name: "BullMQ", level: "Intermédiário" },
-                  { name: "Linux / Bash / WSL", level: "Intermediário" },
-                  { name: "VPS's / Nginx", level: "Básico" },
+                  { name: "Git / Github", level: t("home.skills.advanced") },
+                  { name: "Docker", level: t("home.skills.intermediate") },
+                  { name: "Azure / AWS", level: t("home.skills.basic") },
+                  { name: "Redis", level: t("home.skills.intermediate") },
+                  { name: "BullMQ", level: t("home.skills.intermediate") },
+                  { name: "Linux / Bash / WSL", level: t("home.skills.intermediate") },
+                  { name: "VPS's / Nginx", level: t("home.skills.basic") },
                 ].map((skill) => (
                   <div
                     key={skill.name}
@@ -213,39 +208,23 @@ export default function Home() {
             <section className="space-y-12">
               <div className="border-b border-zinc-800 pb-4">
                 <h2 className="text-2xl font-bold tracking-wider text-zinc-950">
-                  MINHA JORNADA
+                  {t("home.myJourney").toUpperCase()}
                 </h2>
               </div>
 
               <div className="relative space-y-8 pl-0">
                 <TimelineItem
-                  year="jun/2025 - Presente"
-                  title="Fullstack Developer - Freelancer @ Privado"
-                  description={`Desenvolvimento e manutenção multi sistemas de automação financeira.
-Atuando na refatoração do sistema, separação de serviços e otimização de recursos.
-● Bot para automação de operações financeiras
-● Refatoração para padrão mais moderno e manutenível
-● Backend completo utilizando NodeJS + Sequelize, websocket e HTTP
-● Serviço de notificações para telegram com Typescript e GrammY
-● Implementação de Frontend moderno com React + Tailwindcss
-● Integração complexa com APIs externas de corretoras, load balancer, diversos proxys, servidores e escala para +1000 usuários ativos, gerenciamento de VPS Hostinger
-● Otimização de recursos com Redis, BullMQ e multithread com JS/TS
-● Desenvolvimento de helper (Chat em tempo real) e sistema de chamados/tickets com integração de IA`}
+                  year={t("home.timeline.freelancer.period")}
+                  title={t("home.timeline.freelancer.title")}
+                  description={t("home.timeline.freelancer.description")}
                   icon={<Code className="w-5 h-5" />}
                   color="bg-blue-100 text-blue-600 border-blue-500/30"
                   connector
                 />
                 <TimelineItem
-                  year="abr/2025 - nov/2025"
-                  title="Fullstack Developer - Estagiário @ CBM informática"
-                  description={`● Manutenção e suporte em sistemas ERP legado em Delphi
-● Banco de dados MySQL, SGBDs, consultas e scripts de dados, PL/SQL
-● Desenvolvimento Front-end com VueJS
-● Desenvolvimento Back-end com C#, .NET e também PHP/Laravel
-● Conteinerização com Docker e Portainer
-● Soluções Azure como SQL e Blob Storage
-● Atendimento AnyDesk, sistema de chamados, suporte N1, 2 e 3.
-● Desenvolvedor principal em sistema fullstack customizado para clínica médica multidisciplinar`}
+                  year={t("home.timeline.cbm.period")}
+                  title={t("home.timeline.cbm.title")}
+                  description={t("home.timeline.cbm.description")}
                   icon={<Code className="w-5 h-5" />}
                   color="bg-purple-100 text-purple-600 border-purple-500/30"
                 />
@@ -267,6 +246,7 @@ function TimelineItem({
   connector = false,
 }: any) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const t = useTranslations();
 
   return (
     <div className="relative sm:flex gap-12 items-start group">
@@ -306,7 +286,7 @@ function TimelineItem({
         </div>
 
         <span className="mt-3 text-xs font-bold text-zinc-700 hover:text-zinc-900 sm:hidden uppercase tracking-wider transition-colors block">
-          {isExpanded ? "Ver menos" : "Ver mais"}
+          {isExpanded ? t("home.seeLess") : t("home.seeMore")}
         </span>
       </GlassCard>
     </div>
