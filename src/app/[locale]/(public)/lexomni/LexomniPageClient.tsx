@@ -6,12 +6,14 @@ import { LexomniHeroCard } from "./components";
 
 interface LexomniPageClientProps {
   installUrl: string;
+  antigravityInstallUrl: string;
   mcpJsonConfig: string;
   children: React.ReactNode;
 }
 
 export default function LexomniPageClient({
   installUrl,
+  antigravityInstallUrl,
   mcpJsonConfig,
   children
 }: LexomniPageClientProps) {
@@ -52,6 +54,7 @@ export default function LexomniPageClient({
       <section className="mt-12 mb-12">
         <LexomniHeroCard
           installUrl={installUrl}
+          antigravityInstallUrl={antigravityInstallUrl}
           mcpJsonConfig={mcpJsonConfig}
           copied={copied}
           onCopyConfig={handleCopyConfig}

@@ -125,9 +125,11 @@
     "cursorRequired": "Cursor required",
     "compatibility": {
       "cursor": "Works with Cursor",
+      "antigravity": "Works with Antigravity",
       "local": "Runs locally",
       "noCloud": "No cloud required"
     },
+    "underDevelopment": "Under Development",
     "viewRepo": "Star & Contribute",
     "viewNpm": "Install & Use",
     "whyTitle": "WHY LEXOMNI EXISTS",

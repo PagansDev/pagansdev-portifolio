@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { useState } from "react";
 import Image from "next/image";
 import GlassCard from "@/components/ui/GlassCard";
 import Badge from "@/components/ui/Badge";
@@ -13,6 +14,7 @@ const TAGS = ["TypeScript", "Node.js", "MCP", "SQLite FTS5", "Markdown", "PDF"];
 
 interface LexomniHeroCardProps {
   installUrl: string;
+  antigravityInstallUrl: string;
   mcpJsonConfig: string;
   copied: boolean;
   onCopyConfig: () => void;
@@ -20,11 +22,13 @@ interface LexomniHeroCardProps {
 
 export default function LexomniHeroCard({
   installUrl,
+  antigravityInstallUrl,
   mcpJsonConfig,
   copied,
   onCopyConfig
 }: LexomniHeroCardProps) {
   const t = useTranslations("lexomni");
+  const [activeTab, setActiveTab] = useState<"cursor" | "antigravity">("cursor");
 
   return (
     <GlassCard className="p-8 md:p-10 hover:bg-zinc-50/20 transition-colors overflow-hidden">
@@ -42,6 +46,55 @@ export default function LexomniHeroCard({
           <p className="text-base text-zinc-700 dark:text-zinc-300 leading-relaxed">
             <LexomniHighlight>{t("description")}</LexomniHighlight>
           </p>
+
+          <div className="flex w-full gap-4 items-center">
+            <button
+              onClick={() => setActiveTab("cursor")}
+              className={`flex-1 flex justify-center items-center p-2 rounded-xl transition-all duration-300 border-2 ${
+                activeTab === "cursor"
+                  ? "border-blue-500 bg-blue-500/10 scale-105"
+                  : "border-transparent hover:bg-zinc-100 dark:hover:bg-zinc-800"
+              }`}
+            >
+              <div className="relative w-36 h-10">
+                <Image
+                  src="/cursor-light.png"
+                  alt="Cursor Light"
+                  fill
+                  className="object-contain dark:hidden"
+                />
+                <Image
+                  src="/cursor-dark.png"
+                  alt="Cursor Dark"
+                  fill
+                  className="object-contain hidden dark:block"
+                />
+              </div>
+            </button>
+            <button
+              onClick={() => setActiveTab("antigravity")}
+              className={`flex-1 flex justify-center items-center p-2 rounded-xl transition-all duration-300 border-2 ${
+                activeTab === "antigravity"
+                  ? "border-purple-500 bg-purple-500/10 scale-105"
+                  : "border-transparent hover:bg-zinc-100 dark:hover:bg-zinc-800"
+              }`}
+            >
+              <div className="relative w-36 h-10">
+                <Image
+                  src="/antigravity-light.png"
+                  alt="Antigravity Light"
+                  fill
+                  className="object-contain dark:hidden"
+                />
+                <Image
+                  src="/antigravity-dark.png"
+                  alt="Antigravity Dark"
+                  fill
+                  className="object-contain hidden dark:block"
+                />
+              </div>
+            </button>
+          </div>
 
           <p className="text-lg md:text-xl font-bold bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 bg-clip-text text-transparent font-mono tracking-tight">
             {t("tagline")}
@@ -62,33 +115,59 @@ export default function LexomniHeroCard({
 
         <div className="flex flex-col justify-center space-y-4">
           <ElectricBorder
-            color="#0ea5e9"
+            color={activeTab === "cursor" ? "#0ea5e9" : "#a855f7"}
             speed={1}
             chaos={0.3}
             thickness={2}
             style={{ borderRadius: 16 }}
           >
-            <a
-              href={installUrl}
-              className="w-full py-4 px-6 rounded-2xl flex items-center justify-center gap-3 transition-colors hover:bg-cyan-500/10 cursor-pointer bg-gradient-to-r from-cyan-500/5 to-blue-500/5"
-            >
-              <Image
-                src="/cursor-logo.png"
-                alt="Cursor"
-                width={24}
-                height={24}
-                className="object-contain"
-              />
-              <span className="text-lg font-bold text-zinc-900 dark:text-white">
-                {t("installButton")}
-              </span>
-            </a>
+            {activeTab === "cursor" ? (
+              <a
+                href={installUrl}
+                className="w-full py-4 px-6 rounded-2xl flex items-center justify-center gap-3 transition-colors hover:bg-cyan-500/10 cursor-pointer bg-gradient-to-r from-cyan-500/5 to-blue-500/5"
+              >
+                <Image
+                  src="/cursor-logo.png"
+                  alt="Cursor"
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
+                <span className="text-lg font-bold text-zinc-900 dark:text-white">
+                  {t("installButton")}
+                </span>
+              </a>
+            ) : (
+              <a
+                href={antigravityInstallUrl}
+                aria-disabled="true"
+                className="w-full py-4 px-6 rounded-2xl flex items-center justify-center gap-3 transition-colors bg-gradient-to-r from-purple-500/5 to-pink-500/5 opacity-50 grayscale cursor-not-allowed pointer-events-none relative overflow-hidden"
+              >
+                <div className="absolute inset-0 flex items-center justify-center bg-black/5 dark:bg-white/5 backdrop-blur-[1px] z-10">
+                   <span className="px-2 py-1 text-xs font-bold text-white bg-zinc-800 rounded shadow-sm border border-zinc-700">
+                     {t("underDevelopment")}
+                   </span>
+                </div>
+                <Image
+                  src="/antigravity-logo.png"
+                  alt="Antigravity"
+                  width={24}
+                  height={24}
+                  className="object-contain opacity-50"
+                />
+                <span className="text-lg font-bold text-zinc-900 dark:text-white opacity-50">
+                  One-Click Antigravity Install
+                </span>
+              </a>
+            )}
           </ElectricBorder>
 
           <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-zinc-600 dark:text-zinc-400">
             <span className="flex items-center gap-1.5">
               <CheckCircle2 size={14} className="shrink-0 text-purple-500" />
-              {t("compatibility.cursor")}
+              {activeTab === "cursor"
+                ? t("compatibility.cursor")
+                : t("compatibility.antigravity")}
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 size={14} className="shrink-0 text-purple-500" />

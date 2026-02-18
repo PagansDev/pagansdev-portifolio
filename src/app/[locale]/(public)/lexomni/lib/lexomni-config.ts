@@ -8,6 +8,11 @@ export function getInstallUrl(configB64: string): string {
   return `cursor://anysphere.cursor-deeplink/mcp/install?name=lexomni&config=${configB64}`;
 }
 
+export function getAntigravityInstallUrl(configB64: string): string {
+  // Placeholder for Antigravity install URL
+  return "#";
+}
+
 export function getMcpJsonConfig(config: typeof LEXOMNI_MCP_CONFIG): string {
   const inner = JSON.stringify(config, null, 2)
     .split("\n")
